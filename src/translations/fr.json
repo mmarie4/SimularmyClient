@@ -1,0 +1,16 @@
+{
+    "landing.title": "Entre ton email pour rejonidre le champ de bataille",
+    "landing.button": "Continuer",
+    "landing.input_placeholder": "toto@hotmail.com",
+    "signup.title": "Crée un compte",
+    "signup.nickname_title": "Choisis ton surnom",
+    "signup.nickname_details": "C'est ce que les autres joueurs verront",
+    "signup.password_title": "Crée un mot de passe",
+    "signup.password_details": "Et ne l'oublie pas, on n'a pas de fonctionalité 'Mot de passe oublié'",
+    "signup.password_confirmation_title": "Confirme ton mot de passe",
+    "signup.button": "Créer",
+    "login.title": "Content de te revoir !",
+    "login.password_title": "Entre ton mot de passe",
+    "login.button": "Entrer",
+    "home.manage_army": "Gérer mon armée"
+}

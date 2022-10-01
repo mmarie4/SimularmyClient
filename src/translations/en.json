@@ -1,0 +1,16 @@
+{
+    "landing.title": "Enter your email to join the battle field",
+    "landing.button": "Continue",
+    "landing.input_placeholder": "toto@hotmail.com",
+    "signup.title": "Create an account",
+    "signup.nickname_title": "Choose a cool nickname",
+    "signup.nickname_details": "This is how other players will see you",
+    "signup.password_title": "Type a password",
+    "signup.password_details": "Do not forget it, there is no 'Forgot password?' feature",
+    "signup.password_confirmation_title": "Confirm your password",
+    "signup.button": "Signup",
+    "login.title": "Welcome back !",
+    "login.password_title": "Enter your password",
+    "login.button": "Login",
+    "home.manage_army": "Manage Army"
+}
