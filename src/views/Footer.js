@@ -1,5 +1,3 @@
-import { getLocaleToDisplay } from "../translations/i18n"
-
 const Footer = () => {
     return (
         <div class="p-4 w-full h-4 bg-white static flex justify-between items-center">
