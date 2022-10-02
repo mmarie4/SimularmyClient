@@ -23,7 +23,7 @@ const LoginPage = (props) => {
     );
 }
 
-const async onClickSubmit = (props) => {
+const onClickSubmit = (props) => {
   // TODO: Get access token
   props.navigate("home");
 }
