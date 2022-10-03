@@ -1,14 +1,13 @@
 import React, { Component } from "react";
+import { useNavigate } from "react-router-dom";
  
-class ArmyPage extends Component {
-  render() {
-    return (
-      <div>
-        <h2>Manage your army</h2>
-        <p>Nothing to see here</p>
-      </div>
-    );
-  }
+const ArmyPage = (props) => {
+  return (
+    <div>
+      <h2>Manage your army</h2>
+      <p>Nothing to see here</p>
+    </div>
+  );
 }
  
 export default ArmyPage;

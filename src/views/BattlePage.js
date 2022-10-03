@@ -1,14 +1,13 @@
 import React, { Component } from "react";
+import { useNavigate } from "react-router-dom";
  
-class BattlePage extends Component {
-  render() {
-    return (
-      <div>
-        <h2>Battle</h2>
-        <p>Nothing to see here.</p>
-      </div>
-    );
-  }
+const BattlePage = (props) => {
+  return (
+    <div>
+      <h2>Battle</h2>
+      <p>Nothing to see here.</p>
+    </div>
+  );
 }
  
 export default BattlePage;

@@ -11,17 +11,16 @@ import ArmyPage from "./views/ArmyPage";
 import Footer from "./views/Footer";
 
 function App() {
-  const navigate = useNavigate();
   return (
     <div className="App" class="bg-gray-200 w-full h-screen flex flex-col">
       <Header />
       <Routes>
-        <Route path="/" element={<LandingPage navigate={navigate} />} />
-        <Route path="login" element={<LoginPage  navigate={navigate} />}  />
-        <Route path="signup" element={<SignupPage  navigate={navigate} />}  />
-        <Route path="home" element={<HomePage  navigate={navigate}/>}  />
-        <Route path="battle" element={<BattlePage  navigate={navigate} />}  />
-        <Route path="army" element={<ArmyPage  navigate={navigate}/>}  />
+        <Route path="/" element={<LandingPage />} />
+        <Route path="login" element={<LoginPage  />}  />
+        <Route path="signup" element={<SignupPage  />}  />
+        <Route path="home" element={<HomePage  />}  />
+        <Route path="battle" element={<BattlePage  />}  />
+        <Route path="army" element={<ArmyPage  />}  />
       </Routes>
       <Footer />
     </div>
