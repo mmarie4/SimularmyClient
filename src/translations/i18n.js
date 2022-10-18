@@ -26,9 +26,7 @@ export const getLocaleToDisplay = () => {
     if (locale.includes("en"))
         return "EN";
     if (locale.includes("fr"))
-        return "EN";
-
-    return "LANG";
+        return "FR";
 }
 
 i18n

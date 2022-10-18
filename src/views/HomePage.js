@@ -1,8 +1,10 @@
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 import PrimaryButton from "../components/PrimaryButton"
 
 const HomePage = () => {
+  const { t } = useTranslation();
     return (
       <div class="w-9/12 m-auto h-9/12 p-4">
         <div class="w-full border border-gray-300 rounded flex justify-between p-4 bg-white text-xs shadow">
@@ -16,19 +18,21 @@ const HomePage = () => {
           </div>
         </div>
 
-        <div class="w-full border border-gray-300 rounded flex justify-between items-center p-4 bg-white text-xs mt-4 shadow">
-          <p class="w-full text-lg font-bold mb-8 border-b">Find a battle</p>
-        </div>
-
-        <div class="w-full border border-gray-300 rounded p-4 bg-white text-xs mt-4 shadow">
-          <p class="w-full text-lg font-bold mb-8 border-b">Statistics</p>
+        <div class="w-full border border-gray-300 rounded flex justify-between p-4 bg-white text-xs shadow mt-4 flex-col">
+          <p class="w-full text-lg font-bold mb-8 border-b">Battles</p>
+          <div class="font-bold">Statistics</div>
           <div class="flex iems-center justify-between">
             <p>16437 battles</p>
             <p>4567 victories</p>
             <p>3456 defeats</p>
           </div>
-        </div>
 
+          <div class="p-8 mt-12 flex justify-center">
+            <button class="text-xl bg-blue-700 py-6 px-32 rounded text-gray-200 font-bold hover:bg-blue-900">
+              {t('home.find_opponent')}
+            </button>
+          </div>
+        </div>
 
       </div>
     );

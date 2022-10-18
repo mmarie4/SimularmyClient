@@ -4,6 +4,9 @@ const store = {
     },
     save: (key, object) => {
         localStorage.setItem(key, JSON.stringify(object));
+    },
+    remove: (key) => {
+        localStorage.removeItem(key);
     }
 }
 

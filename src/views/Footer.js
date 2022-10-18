@@ -6,8 +6,6 @@ const Footer = () => {
         </div>
     )
 
-    if ()
-
     return header;
 }
 

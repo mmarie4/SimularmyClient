@@ -12,5 +12,10 @@
     "login.title": "Welcome back !",
     "login.password_title": "Enter your password",
     "login.button": "Login",
-    "home.manage_army": "Manage Army"
+    "home.manage_army": "Manage Army",
+    "header.languages": "Languages",
+    "header.change_password": "Change password",
+    "header.logout": "Logout",
+    "header.delete_account": "Delete account",
+    "home.find_opponent": "Find an opponent"
 }

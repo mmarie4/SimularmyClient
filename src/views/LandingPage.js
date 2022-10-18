@@ -26,6 +26,7 @@ const LandingPage = (props) => {
         translationKeyPlaceholder="landing.input_placeholder"
         type="email"
         onChange={e => onInputChange(e, setButtonEnabled)}
+        onEnter={async () => await onClickEnter(navigate)}
       />
       <div class="mt-6 text-center">
         <PrimaryButton

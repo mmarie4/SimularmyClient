@@ -41,6 +41,7 @@ const SignupPage = (props) => {
       <InputField
         type="password"
         onChange={e => onInputChange("password2", e, setButtonEnabled)}
+        onEnter={async () => await onClickSubmit(navigate)}
       />
       <div class="pt-8 text-center w-full">
         <PrimaryButton

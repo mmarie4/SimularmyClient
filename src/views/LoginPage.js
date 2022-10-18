@@ -31,6 +31,7 @@ const LoginPage = (props) => {
       <InputField
         type="password"
         onChange={e => onInputChange(e, setButtonEnabled)}
+        onEnter={async () => await onClickSubmit(navigate)}
       />
       <div class="pt-8 text-center w-full">
         <PrimaryButton

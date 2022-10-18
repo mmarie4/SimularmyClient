@@ -12,5 +12,10 @@
     "login.title": "Content de te revoir !",
     "login.password_title": "Entre ton mot de passe",
     "login.button": "Entrer",
-    "home.manage_army": "Gérer mon armée"
+    "home.manage_army": "Gérer mon armée",
+    "header.languages": "Langages",
+    "header.change_password": "Changer le mot de passe",
+    "header.logout": "Se déconnecter",
+    "header.delete_account": "Supprimer le compte",
+    "home.find_opponent": "Trouver un adversaire"
 }
