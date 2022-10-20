@@ -9,6 +9,7 @@ import { requireEmail, checkToken } from '../utils/validations';
 import Headline from "../components/Headline"
 import InputField from "../components/InputField"
 import PrimaryButton from "../components/PrimaryButton"
+import Toast from '../components/Toast';
 
 const form = {
   isLoading: false
@@ -18,6 +19,7 @@ const SignupPage = (props) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [buttonEnabled, setButtonEnabled] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(undefined);
 
   useEffect(() => {
     checkToken(navigate);
@@ -41,15 +43,16 @@ const SignupPage = (props) => {
       <InputField
         type="password"
         onChange={e => onInputChange("password2", e, setButtonEnabled)}
-        onEnter={async () => await onClickSubmit(navigate)}
+        onEnter={async () => await onClickSubmit(navigate, setErrorMessage)}
       />
       <div class="pt-8 text-center w-full">
         <PrimaryButton
           translationKey="signup.button"
-          onClick={async () => await onClickSubmit(navigate)}
+          onClick={async () => await onClickSubmit(navigate, setErrorMessage)}
           isEnabled={buttonEnabled}
         />
       </div>
+      <Toast content={errorMessage}/>
     </div>
   );
 }
@@ -59,11 +62,17 @@ const onInputChange = (key, event, setButtonEnabled) => {
   setButtonEnabled(!form.isLoading && form.password != undefined && form.password != "" && form.password2 != undefined && form.password2 != "")
 } 
 
-const onClickSubmit = async navigate => {
+const onError = (errorMessage, setErrorMessage) => {
+  setErrorMessage(errorMessage);
+  setTimeout(() => setErrorMessage(undefined), 1000);
+}
+
+const onClickSubmit = async (navigate, setErrorMessage) => {
   form.isLoading = true;
   const request = {
     endpoint: `api/players/sign-up`,
-    content: { email: form.email, pseudo: form.pseudo, password: form.password, password2: form.password2 }
+    content: { email: form.email, pseudo: form.pseudo, password: form.password, password2: form.password2 },
+    errorCallback: (errorMessage) => onError(errorMessage, setErrorMessage)
   }
   const response = await http.post(request);
   form.isLoading = false;

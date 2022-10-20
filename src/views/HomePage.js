@@ -1,15 +1,23 @@
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
+import React, { useState } from "react";
+
+import store from "../utils/store";
 
 import PrimaryButton from "../components/PrimaryButton"
+import Toast from "../components/Toast";
 
 const HomePage = () => {
   const { t } = useTranslation();
+  const [errorMessage, setErrorMessage] = useState(undefined);
+  const me = store.get('me');
+
     return (
       <div class="w-9/12 m-auto h-9/12 p-4">
-        <div class="w-full border border-gray-300 rounded flex justify-between p-4 bg-white text-xs shadow">
+
+        <div class="w-full border border-gray-300 rounded flex justify-between p-4 bg-white text-xs shadow mb-12">
           <div class="flex flex-col justify-between h-full">
-            <p class="text-lg font-bold">Nickname</p>
+            <p class="text-lg font-bold">{me.pseudo}</p>
             <p>Rank</p>
           </div>
           <div class="text-right">
@@ -20,7 +28,7 @@ const HomePage = () => {
 
         <div class="w-full border border-gray-300 rounded flex justify-between p-4 bg-white text-xs shadow mt-4 flex-col">
           <p class="w-full text-lg font-bold mb-8 border-b">Battles</p>
-          <div class="font-bold">Statistics</div>
+          <div class="font-bold">Stats</div>
           <div class="flex iems-center justify-between">
             <p>16437 battles</p>
             <p>4567 victories</p>
@@ -34,8 +42,15 @@ const HomePage = () => {
           </div>
         </div>
 
+        <Toast content={errorMessage}/>
+
       </div>
     );
 }
- 
+
+const onError = (errorMessage, setErrorMessage) => {
+  setErrorMessage(errorMessage);
+  setTimeout(() => setErrorMessage(undefined), 1000);
+}
+
 export default HomePage;
