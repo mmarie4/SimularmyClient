@@ -17,5 +17,12 @@
     "header.change_password": "Change password",
     "header.logout": "Logout",
     "header.delete_account": "Delete account",
-    "home.find_opponent": "Find an opponent"
+    "home.find_opponent": "Find an opponent",
+    "header.current_password": "Current password",
+    "header.new_password": "New password",
+    "header.confirm_new_password": "Confirm new password",
+    "header.update": "Update",
+    "header.delete_account_headline": "Are you sure you want to delete your account ? This cannot be reverted",
+    "header.delete": "Delete",
+    "header.cancel": "Cancel"
 }

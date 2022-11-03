@@ -1,10 +1,16 @@
 import { getLocaleToDisplay } from "../translations/i18n"
-import { useTranslation } from 'react-i18next';
+import { getInitialProps, useTranslation } from 'react-i18next';
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import store from "../utils/store";
 import http from "../utils/http";
+
+import PrimaryButton from "../components/PrimaryButton"
+import DeleteButton from "../components/DeleteButton"
+import InputField from "../components/InputField"
+import Modal from "../components/Modal"
+import Headline from "../components/Headline"
 
 const Header = () => {
     const { t } = useTranslation();
@@ -12,6 +18,8 @@ const Header = () => {
     const currentLocale = getLocaleToDisplay();
     const simularmyState = store.get('simularmy-state');
     const [settingsExtended, extendSettings] = useState(simularmyState?.settingsExtended ?? false);
+    const [updatePassworfModalOpen, openUpdatePasswordModal] = useState(false);
+    const [deleteAccountModalOpen, openDeleteAccountModal] = useState(false);
 
     const headerJsx = [
         <div class="p-4 w-full h-12 bg-white static flex justify-between items-center shadow">
@@ -31,11 +39,23 @@ const Header = () => {
                         <div class="px-2"> - </div>
                         <div class={currentLocale == "FR" ? "font-bold" : "cursor-pointer font-semibold hover:text-gray-800"} onClick={() => onClickLocale('fr', navigate)}>FR</div>
                     </div>
-                    <div class="font-semibold text-gray-500 py-1 px-3 cursor-pointer text-right text-xs hover:text-gray-800">{t('header.change_password')}</div>
+                    <div class="font-semibold text-gray-500 py-1 px-3 cursor-pointer text-right text-xs hover:text-gray-800" onClick={() => openUpdatePasswordModal(true)}>{t('header.change_password')}</div>
                     <div class="font-semibold text-gray-500 py-1 px-3 cursor-pointer text-right text-xs hover:text-gray-800" onClick={() => onClickLogout(navigate, store, extendSettings)}>{t('header.logout')}</div>
-                    <div class="font-semibold text-red-400 py-1 px-3 cursor-pointer text-right text-xs hover:text-red-700 mt-4">{t('header.delete_account')}</div>
+                    <div class="font-semibold text-red-400 py-1 px-3 cursor-pointer text-right text-xs hover:text-red-700 mt-4" onClick={() => openDeleteAccountModal(true)}>{t('header.delete_account')}</div>
                 </div>
             </div>
+        )
+    }
+
+    if (updatePassworfModalOpen) {
+        headerJsx.push(
+            <Modal jsxContent={jsxUpdatePasswordModal} onClickBackground={openUpdatePasswordModal}/>
+        )
+    }
+
+    if (deleteAccountModalOpen) {
+        headerJsx.push(
+            <Modal jsxContent={jsxDeleteAccountModal} onClickBackground={openDeleteAccountModal}/>
         )
     }
 
@@ -60,8 +80,25 @@ const onClickLogout = (navigate, store, extendSettings) => {
     navigate("/");
 }
 
-const onClickUpdatePassword = () => {
+const jsxUpdatePasswordModal = (
+    <div class="flex flex-col p-8">
+        <InputField type="password" translationKeyPlaceholder="header.current_password"/>
+        <InputField type="password" translationKeyPlaceholder="header.new_password"/>
+        <InputField type="password" translationKeyPlaceholder="header.confirm_new_password"/>
+        <div class="text-center">
+            <PrimaryButton onClick={() => alert("clicked!")} isEnabled={true} translationKey="header.update"/>
+        </div>
+    </div>
+)
 
-}
+const jsxDeleteAccountModal = (
+    <div class="flex flex-col p-8">
+        <Headline type="password" translationKey="header.delete_account_headline"/>
+        <div class="justify-center flex mt-8">
+            <div class="mr-6"><PrimaryButton onClick={() => alert("clicked!")} isEnabled={true} translationKey="header.cancel"/></div>
+            <DeleteButton onClick={() => alert("clicked!")} isEnabled={true} translationKey="header.delete"/>
+        </div>
+    </div>
+)
 
 export default Header;

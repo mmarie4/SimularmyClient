@@ -17,5 +17,12 @@
     "header.change_password": "Changer le mot de passe",
     "header.logout": "Se déconnecter",
     "header.delete_account": "Supprimer le compte",
-    "home.find_opponent": "Trouver un adversaire"
+    "home.find_opponent": "Trouver un adversaire",
+    "header.current_password": "Mot de passe actuel",
+    "header.new_password": "Nouveau mot de passe",
+    "header.confirm_new_password": "Confirmer le nouveau mot de passe",
+    "header.update": "Mettre à jour",
+    "header.delete_account_headline": "Est-ce que tu es sûr de vouloir supprimer ton compte ? Il ne pourra pas être récupéré",
+    "header.delete": "Supprimer",
+    "header.cancel": "Annuler"
 }
