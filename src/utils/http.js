@@ -54,7 +54,7 @@ const http = {
 }
 
 const addAuthorizationHeader = (headers) => {
-    const me = localStorage.getItem("me");
+    const me = JSON.parse(localStorage.getItem("me"))
     if (me) {
         headers["Authorization"] = `Bearer ${me.token}`
     }
