@@ -8,6 +8,7 @@ import SignupPage from "./views/SignupPage";
 import HomePage from "./views/HomePage";
 import BattlePage from "./views/BattlePage";
 import ArmyPage from "./views/ArmyPage";
+import AdminPage from "./views/AdminPage";
 import Footer from "./views/Footer";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="home" element={<HomePage  />}  />
         <Route path="battle" element={<BattlePage  />}  />
         <Route path="army" element={<ArmyPage  />}  />
+        <Route path="admin" element={<AdminPage  />}  />
       </Routes>
       <Footer />
     </div>
